@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "4dd1ffae-579b-48c7-a175-f03031c09638",
+		"name": "Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23826730"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "3",
+									"description": "2 - vendor, 3 - customer",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "admin@test.in",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+918762149269",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password@123",
+									"type": "text"
+								},
+								{
+									"key": "cnfrm_pwd",
+									"value": "Password@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9291/api/account/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9291",
+							"path": [
+								"api",
+								"account",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "oggy@test.io",
+									"description": "email or phone",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Qwerty@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9291/api/account/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9291",
+							"path": [
+								"api",
+								"account",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Vendor Controls",
+					"item": [
+						{
+							"name": "Vendor List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDcyZDY4ZTQyNTlmYjg0YmUxYzg5OCIsInJvbGUiOjEsImVtYWlsIjoiYWRtaW5AdGVzdC5pbiIsInBob25lIjoiKzkxODc2MjE0OTI2OSIsImlhdCI6MTcwODYwMDczMH0.J81WQNWyAkVugBUQwuLa0L8Oz5_z-RbCr5WHMqAWENM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:9291/api/admin/vendor/list?status=2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "9291",
+									"path": [
+										"api",
+										"admin",
+										"vendor",
+										"list"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "2",
+											"description": "1 - pending, 2 - accepted, 3 - rejected"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Approve/Reject",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDcyMzY3ZDYyY2QwMzIzMmYyMWEzZCIsInJvbGUiOjMsImVtYWlsIjoib2dneUB0ZXN0LmlvIiwicGhvbmUiOiIrOTEwOTg3NjU0OTk5IiwiaWF0IjoxNzA4NjAwODk4fQ.Gf2xFqlv4DWUkA4Ky5FhCoalF08xG43NQ1EGYnRoUkU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "verify_status",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:9291/api/admin/accept/vendor?vendor_id=65d72241808df0ab7649ee2f",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9291",
+									"path": [
+										"api",
+										"admin",
+										"accept",
+										"vendor"
+									],
+									"query": [
+										{
+											"key": "vendor_id",
+											"value": "65d72241808df0ab7649ee2f"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Vendor",
+			"item": []
+		},
+		{
+			"name": "Customer",
+			"item": []
+		}
+	]
+}

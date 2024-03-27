@@ -1,0 +1,39 @@
+const CONTENT_STATE = {
+  IS_ACTIVE: 1,
+  NOT_AVTIVE: 0,
+};
+
+const ROLE = {
+  ADMIN: 1,
+  VENDOR: 2,
+  CUSTOMER: 3,
+};
+
+const SALTROUND = 10;
+
+const VERIFY_STATUS = {
+  PENDING: 1,
+  APPROVED: 2,
+  REJECTED: 3,
+};
+
+const PROP_STATUS = {
+  READY_TO_BUY: 1,
+  UPCOMMING: 2,
+  SOLD: 3,
+  RENTED: 4,
+};
+
+const BOOKING_STATUS = {
+  ACCEPTED: 1,
+  NOT_ACCEPTED: 2,
+};
+
+export default {
+  CONTENT_STATE,
+  ROLE,
+  SALTROUND,
+  VERIFY_STATUS,
+  PROP_STATUS,
+  BOOKING_STATUS,
+};
