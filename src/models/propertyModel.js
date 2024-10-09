@@ -7,6 +7,8 @@ const propertyModel = new Schema({
     type: String,
     required: true,
   },
+
+  // this is comment 
   city: {
     type: String,
     required: true,
